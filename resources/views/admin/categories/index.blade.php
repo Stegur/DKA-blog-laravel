@@ -30,7 +30,7 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="3" class="text-center"><h2>Данный отсутвуют</h2></td>
+                        <td colspan="3" class="text-center"><h2>Данные отсутвуют</h2></td>
                     </tr>
                 @endforelse
 
