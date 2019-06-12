@@ -25,7 +25,7 @@
                         <td>{{$category->title}}</td>
                         <td>{{$category->published}}</td>
                         <td>
-                            <a href="{{route('admin.category.edit', ['id' => $category->id])}}"><i class="fa fa-edit"></i></a>
+                            <a href="{{route('admin.category.edit', $category)}}"><i class="fa fa-edit"></i></a>
                         </td>
                     </tr>
                 @empty
@@ -35,15 +35,15 @@
                 @endforelse
 
             </tbody>
-            <tfoot>
-            <tr>
-                <td colspan="3">
-                    <ul class="pagination pull-right">
+{{--            <tfoot>--}}
+{{--            <tr>--}}
+{{--                <td colspan="3">--}}
+{{--                    <ul class="pagination pull-right">--}}
 {{--                        {{$categories->links}}--}}
-                    </ul>
-                </td>
-            </tr>
-            </tfoot>
+{{--                    </ul>--}}
+{{--                </td>--}}
+{{--            </tr>--}}
+{{--            </tfoot>--}}
         </table>
     </div>
 
