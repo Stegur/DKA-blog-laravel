@@ -21,10 +21,10 @@
 </select>
 
 <label for="">Краткое описание</label>
-<textarea class="form-control" name="description_short" id="description_short">{{$article->description_short or ""}}</textarea>
+<textarea class="form-control" name="description_short" id="description_short" required>{{$article->description_short or ""}}</textarea>
 
 <label for="">Полное описание</label>
-<textarea class="form-control" name="description" id="description">{{$article->description or ""}}</textarea>
+<textarea class="form-control" name="description" id="description" required>{{$article->description or ""}}</textarea>
 
 <hr>
 

@@ -27,12 +27,28 @@ class Article extends Model
 
     public function setSlugAttribute($value)
     {
-        $this->attributes['slug'] = Str::slug(mb_substr($this->title, 0, 40) . '-' . Carbon::now()->format('dmyHi'), '-');
+        $this->attributes['slug'] = Str::slug(mb_substr($this->title, 0, 40) . '-' . Carbon::now()->format('dmyHi'),
+            '-');
     }
 
     // Polymorphic relation with Category
     public function categories()
     {
         return $this->morphToMany('App\Category', 'categoryable');
+    }
+
+//    public function scopePublished($query, $published)
+//    {
+//        return $query->where('published', $published)->take(2);
+//    }
+//
+//    public function scopeOrderByCreated($query)
+//    {
+//        return $query->orderBy('created_at');
+//    }
+
+    public function scopeLastArticles($query, $count)
+    {
+        return $query->orderBy('created_at', 'desc')->take($count)->get();
     }
 }
